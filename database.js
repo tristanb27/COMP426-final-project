@@ -30,20 +30,15 @@ const reviewSchema = new mongoose.Schema({
 });
 
 // Define Category Schema
-const categorySchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    description: String
-});
+
 
 // Create models from the schemas
 const Recipe = mongoose.model('Recipe', recipeSchema);
 const User = mongoose.model('User', userSchema);
 const Review = mongoose.model('Review', reviewSchema);
-const Category = mongoose.model('Category', categorySchema);
 
 module.exports = {
     Recipe,
     User,
-    Review,
-    Category
+    Review
 };

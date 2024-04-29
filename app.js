@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 
-const { Recipe, User, Review, Category } = require('./database');
+const { Recipe, User, Review } = require('./database');
 
 const app = express();
 
@@ -169,6 +169,70 @@ app.post('/api/users/logout', async (req, res) => {
         res.json({ message: 'Logged out successfully' });
     } catch (err) {
         console.error(err);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+router.post('/reviews', async (req, res) => {
+    try {
+        const review = new Review(req.body);
+        await review.save();
+        res.status(201).json(review);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// Get all reviews
+router.get('/reviews', async (req, res) => {
+    try {
+        const reviews = await Review.find();
+        res.json(reviews);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// Get reviews by recipe ID
+router.get('/reviews/:recipeId', async (req, res) => {
+    const { recipeId } = req.params;
+    try {
+        const reviews = await Review.find({ recipe: recipeId });
+        res.json(reviews);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// Update a review by ID
+router.put('/reviews/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const review = await Review.findByIdAndUpdate(id, req.body, { new: true });
+        if (!review) {
+            return res.status(404).json({ message: 'Review not found' });
+        }
+        res.json(review);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// Delete a review by ID
+router.delete('/reviews/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const review = await Review.findByIdAndDelete(id);
+        if (!review) {
+            return res.status(404).json({ message: 'Review not found' });
+        }
+        res.json({ message: 'Review deleted successfully' });
+    } catch (error) {
+        console.error(error);
         res.status(500).json({ message: 'Server error' });
     }
 });
