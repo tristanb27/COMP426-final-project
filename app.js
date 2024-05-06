@@ -8,6 +8,8 @@ const { Recipe, User, Review } = require('./database');
 
 const app = express();
 
+app.use(bodyParser.json());
+
 // Middleware to parse JSON requests
 app.use(express.json());
 
@@ -173,7 +175,7 @@ app.post('/api/users/logout', async (req, res) => {
     }
 });
 
-router.post('/reviews', async (req, res) => {
+app.post('/reviews', async (req, res) => {
     try {
         const review = new Review(req.body);
         await review.save();
@@ -185,7 +187,7 @@ router.post('/reviews', async (req, res) => {
 });
 
 // Get all reviews
-router.get('/reviews', async (req, res) => {
+app.get('/reviews', async (req, res) => {
     try {
         const reviews = await Review.find();
         res.json(reviews);
@@ -196,7 +198,7 @@ router.get('/reviews', async (req, res) => {
 });
 
 // Get reviews by recipe ID
-router.get('/reviews/:recipeId', async (req, res) => {
+app.get('/reviews/:recipeId', async (req, res) => {
     const { recipeId } = req.params;
     try {
         const reviews = await Review.find({ recipe: recipeId });
@@ -208,7 +210,7 @@ router.get('/reviews/:recipeId', async (req, res) => {
 });
 
 // Update a review by ID
-router.put('/reviews/:id', async (req, res) => {
+app.put('/reviews/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const review = await Review.findByIdAndUpdate(id, req.body, { new: true });
@@ -223,7 +225,7 @@ router.put('/reviews/:id', async (req, res) => {
 });
 
 // Delete a review by ID
-router.delete('/reviews/:id', async (req, res) => {
+app.delete('/reviews/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const review = await Review.findByIdAndDelete(id);
