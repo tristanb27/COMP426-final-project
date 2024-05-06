@@ -1,0 +1,143 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ribbon {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    background-color: #aae6dc;
+    height: 150px;
+}
+
+#logo {
+    height: 100px;
+    margin-left: 50px;
+    padding-top: 12px;
+}
+
+.tab {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: snow;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
+.log_in_case {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 100px;
+
+}
+
+.log_in {
+    border-radius: 15px;
+    background-color: #aae6dc;
+}
+
+#page_header {
+    padding-left: 100px;
+    font-size: 40px;
+}
+
+.recipe_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border: red solid 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.recipe {
+    background-color: white;
+    border: none;
+    padding-bottom: 50px;
+   
+}
+
+#recipe_img {
+    border-radius: 20px;
+    border: solid blue 5px;
+}
+
+/* -------------------------- */
+/* Begin form styling */
+/* -------------------------- */
+
+#form-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: none;
+}
+
+form {
+    width: 85%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: black;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    background: snow;
+    height: 35px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+    border: 2px solid black;
+}
+
+label {
+    display: block;
+}
+
+#login_button {
+    padding: 19px 39px 18px 39px;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    transition: 1s;
+}
+
+
+
+/* -------------------------- */
+/* Begin desktop view styling */
+/* -------------------------- */
+
+
+
