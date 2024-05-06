@@ -1,3 +1,11 @@
 # COMP426-final-project
 
-Recipe Now is our final project for COMP 426, in which users can make an account to share and create recipes on a database-based web application.
+# Authors
+Logan Beaver
+Tristan Blizzard
+Jacob Blizzard
+
+# Recipe Now
+Recipe Now is a databased-based web application in which users can create accounts to share and create recipes. Users have access to hommade recipes for various cuisines and the ability to create their own recipes to add to the database as a way to record one's own recipes rather than have them in memory or written on paper, both of which can easily be lost. In the database, recipes written by the original user will have access to be created, edited, and deleted if necessary.
+
+## Demonstration:
