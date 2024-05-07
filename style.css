@@ -57,7 +57,6 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    border: red solid 5px;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -71,7 +70,11 @@ a:hover {
 
 #recipe_img {
     border-radius: 20px;
-    border: solid blue 5px;
+    object-fit: cover;
+    background-size: cover;
+    
+    height: 300px;
+    
 }
 
 /* -------------------------- */
@@ -133,11 +136,29 @@ button:hover {
     transition: 1s;
 }
 
+.recipe_content {
+    display: grid;
+    padding-left: 100px;
+    padding-right: 100px;
+    grid-template-columns: 1fr 1fr;
+}
 
+#main_recipe_header {
+    color: gray;
+    padding-left: 100px;
+}
 
-/* -------------------------- */
-/* Begin desktop view styling */
-/* -------------------------- */
+#recipe_header {
+    color: gray;
+}
+
+.food_photo {
+    height: 500px;
+}
+
+#recipe_name {
+    font-size: 18px;
+}
 
 
 
