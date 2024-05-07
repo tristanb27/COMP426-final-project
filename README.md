@@ -19,4 +19,4 @@ To view your recipes and some of our own, it's as simple as just clicking the bu
 To create a recipe, click the button labeled "Create a Recipe" and follow the instructions from there. It is necessary to create 
 
 ## What's Used
-MongoDB and mongoose, Spoonacular API to fetch recipe infomration like nutritional details, cooking times, similar recipes, Express.js framework. No CSS framework was used. 
+MongoDB and mongoose, Spoonacular API to fetch recipe infomration like nutritional details, cooking times, similar recipes, Express.js framework.
